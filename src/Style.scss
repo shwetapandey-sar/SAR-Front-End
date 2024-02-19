@@ -1,0 +1,289 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+    .formContainer {
+      .formWrapper {
+        .home {
+          .customer {
+            width: 40%;
+            padding: 20px 40px; // Example of changing padding for tablet screens
+          }
+        }
+      }
+    }
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+    .formContainer {
+      .formWrapper {
+        .home {
+          .customer {
+            width: 60%;
+            padding: 20px 40px; // Example of changing padding for tablet screens
+          }
+        }
+      }
+    }
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+//  this css for the login page
+// ***********************************************************************************************************************
+
+.formContainer {
+  //   background-color: #a7bcff;
+  background-image: url("../public/bgi.jpg");
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .formWrapper {
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .logo {
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+      }
+    }
+
+    .title {
+      color: black;
+      font-size: 35px;
+      font-weight: bolder;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input {
+        padding: 15px;
+        border: none;
+        width: 250px;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+
+      button {
+        background-color: #041a61;
+        color: white;
+        padding: 10px;
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    p {
+      color: black;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+}
+// **********************************************************************************************************************
+// End of login page
+
+// This css for Home page
+
+.home {
+  background-color: #f9f5f5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 98%;
+    height: 95%;
+    display: flex;
+    overflow: hidden;
+    @include tablet {
+      width: 90%;
+    }
+
+    .sidebar {
+      flex: 0.3;
+      background-color: white;
+      position: relative;
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #b61917;
+        height: 50px;
+        padding: 10px;
+        justify-content: space-between;
+
+        .logo {
+          img {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+          }
+        }
+        .sar-name {
+          font-size: 20px;
+          color: white;
+          margin-left: 3px;
+          font-weight: bold;
+        }
+      }
+
+      .lists {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            padding: 10px;
+            color: black;
+
+            &:hover {
+              background-color: #b61917;
+              color: white;
+            }
+
+            .icon {
+              margin-right: 3px;
+              height: 20px;
+            }
+
+            span {
+              font-size: 15px;
+              font-weight: 600;
+              margin: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .mainpage {
+      flex: 2;
+
+      .Main-nav-bar {
+        height: 50px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .icon {
+          color: white;
+          height: 60px;
+          margin: 3px;
+        }
+      }
+
+      .profile,
+      .company {
+        form {
+          .fields {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 2px;
+            justify-content: space-between;
+
+            .input-field {
+              display: flex;
+              width: calc(100% / 3 - 15px);
+              flex-direction: column;
+              margin: 4px 0;
+
+              label {
+                font-size: 24px;
+                font-weight: 700;
+                color: black;
+                margin: 4px;
+              }
+              input {
+                outline: none;
+                font-size: 14px;
+                font-weight: 300;
+                border-radius: 10px;
+                border: 1px solid lightgray;
+                height: 35px;
+                margin: 8px 0;
+
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+        .but {
+          button {
+            height: 40px;
+            width: 90px;
+            border: 2px solid lightgray;
+            color: black;
+            font-weight: bolder;
+            font-size: 23px;
+            border-radius: 15px;
+            margin: 10px;
+            position: absolute;
+            left: 50%;
+            &:hover {
+              background-color: #b61917;
+              color: white;
+            }
+          }
+        }
+      }
+      .customer {
+        table {
+          position: absolute;
+          top: 57%;
+          left: 45%;
+          transform: translate(-50%, -50%);
+          border-collapse: collapse;
+          width: 800px;
+          height: 400px;
+          border: 1px solide #bdc3c7;
+          box-shadow: 2px 2px 12px pink, -1px -1px 8px blueviolet;
+
+          tr {
+            transition: all, 2s ease-in;
+            cursor: pointer;
+            &:hover {
+              background-color: #ee7d7d;
+              transform: scale(1);
+              box-shadow: 2px 2px 12px pink, -1px -1px 8px blueviolet;
+            }
+
+            th,
+            td {
+              padding: 10px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+            }
+          }
+          #header {
+            background-color: #bec8e9;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

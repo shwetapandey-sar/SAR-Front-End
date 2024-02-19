@@ -1,0 +1,59 @@
+
+.company{
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+  margin-left: 160px;
+  border: 50px solid white;
+  height: 90vh;
+  width: 180vh; 
+}
+.search-bar {
+    width: 500px; /* Set your desired width */
+    height: 35px; /* Set your desired height */
+    font-size: 20px; /* Set your desired font size */
+    padding: 1px; /* Set padding for inside the input */
+    margin-right: 20px; /* Set margin for spacing (optional) */
+    /* Add more styles as needed */
+  }
+
+  .container {
+    text-align: left;
+  }
+
+  .customer-table{
+      position: absolute;
+      top: 57%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      border-collapse: collapse;
+      width: 700px;
+      height: 400px;
+      border: 1px solide #bdc3c7;
+      box-shadow: 2px 2px 12px pink, -1px -1px 8px blueviolet;
+
+      tr {
+        transition: all, 2s ease-in;
+        cursor: pointer;
+        &:hover {
+          background-color: #ee7d7d;
+          transform: scale(1);
+          box-shadow: 2px 2px 12px pink, -1px -1px 8px blueviolet;
+        }
+      }
+
+        th,
+        td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+      }
+      #header1 {
+        background-color: #bec8e9;
+        font-weight: 500;
+      }
+
+      #header {
+        background-color: #da9ef8;
+        font-weight: 400;
+      }
+    }
